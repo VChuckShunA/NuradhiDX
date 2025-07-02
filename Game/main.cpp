@@ -1,7 +1,7 @@
 #include <DX3D/All.h>
 int main() {
 	try {
-		dx3d::Game game{};
+		dx3d::Game game({dx3d::Logger::LogLevel::Info});
 
 		game.run();
 
