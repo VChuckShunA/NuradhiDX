@@ -11,6 +11,7 @@ namespace dx3d
 
 	private:
 		void* m_handle{};
+		Rect m_size{};
 	};
 
 }
