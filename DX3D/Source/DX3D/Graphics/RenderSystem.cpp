@@ -24,11 +24,11 @@ dx3d::RenderSystem::RenderSystem(const RenderSystemDesc& desc): Base(desc.base)
 		"Query Interface failed to retrieve IDXGDI Device.");
 
 
-	DX3DGraphicsLogErrorAndThrow(m_dxgiDevice->QueryInterface(IID_PPV_ARGS(&m_dxgiAdapter)),
+	DX3DGraphicsLogErrorAndThrow(m_dxgiDevice->GetParent(IID_PPV_ARGS(&m_dxgiAdapter)),
 		"Query Interface failed to retrieve IDXGDI Adapter.");
 
 
-	DX3DGraphicsLogErrorAndThrow(m_dxgiAdapter->QueryInterface(IID_PPV_ARGS(&m_dxgiFactory)),
+	DX3DGraphicsLogErrorAndThrow(m_dxgiAdapter->GetParent(IID_PPV_ARGS(&m_dxgiFactory)),
 		"Query Interface failed to retrieve IDXGDI Factory.");
 
 }
@@ -37,12 +37,12 @@ dx3d::RenderSystem::~RenderSystem()
 {
 }
 
-SwapChainPtr dx3d::RenderSystem::CreateSwapChain(const SwapChainDesc& desc)
+SwapChainPtr dx3d::RenderSystem::CreateSwapChain(const SwapChainDesc& desc) const
 {
 	return std::make_shared<SwapChain>(desc, getGraphicResourceDesc());
 }
 
-GraphicsResourceDesc dx3d::RenderSystem::getGraphicResourceDesc()
+GraphicsResourceDesc dx3d::RenderSystem::getGraphicResourceDesc() const noexcept
 {
-	return { {m_logger}, *m_d3dDevice.Get(),*m_dxgiFactory.Get()};
+	return { {m_logger},shared_from_this(), *m_d3dDevice.Get(),*m_dxgiFactory.Get()};
 }

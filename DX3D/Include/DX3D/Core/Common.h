@@ -12,13 +12,14 @@ namespace dx3d
 
 	struct WindowDesc {
 		BaseDesc base;
+		Rect size{};
 	};
 
 
 	struct DisplayDesc
 	{
 		WindowDesc window;
-		Rect size{};
+		RenderSystem& renderSystem;
 	};
 
 
@@ -71,6 +72,7 @@ namespace dx3d
 		ui32 vertexSize{};
 	};*/
 	struct GameDesc {
+		Rect windowSize{ 1280,720 };
 		Logger::LogLevel logLevel = Logger::LogLevel::Error;
 	};
 

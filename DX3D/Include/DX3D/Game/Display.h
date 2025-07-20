@@ -6,7 +6,7 @@ namespace dx3d
 	class Display final : public Window
 	{
 	public:
-		Display();
+		explicit Display(const DisplayDesc& desc);
 
 		SwapChain& getSwapChain() noexcept;
 	private:
