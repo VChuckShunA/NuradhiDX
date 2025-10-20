@@ -1,10 +1,10 @@
 #include <DX3D/Graphics/GraphicsEngine.h>
-#include <DX3D/Graphics/RenderSystem.h>
+#include <DX3D/Graphics/GraphicsDevice.h>
 using namespace dx3d;
 
 dx3d::GraphicsEngine::GraphicsEngine(const GraphicsEngineDesc& desc):Base(desc.base)
 {
-	m_renderSystem = std::make_shared<RenderSystem>(RenderSystemDesc{m_logger});
+	mgraphicsDevice = std::make_shared<GraphicsDevice>(GraphicsDeviceDesc{m_logger});
 }
 
 
@@ -13,7 +13,7 @@ dx3d::GraphicsEngine::~GraphicsEngine()
 {
 }
 
-RenderSystem& dx3d::GraphicsEngine::getRenderSystem() const noexcept
+GraphicsDevice& dx3d::GraphicsEngine::getGraphicsDevice() const noexcept
 {
-	return *m_renderSystem;
+	return *mgraphicsDevice;
 }

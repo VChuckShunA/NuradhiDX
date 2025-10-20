@@ -19,7 +19,7 @@ namespace dx3d
 	struct DisplayDesc
 	{
 		WindowDesc window;
-		RenderSystem& renderSystem;
+		GraphicsDevice& graphicsDevice;
 	};
 
 
@@ -28,7 +28,7 @@ namespace dx3d
 	};
 
 
-	struct RenderSystemDesc {
+	struct GraphicsDeviceDesc {
 		BaseDesc base;
 	};
 
