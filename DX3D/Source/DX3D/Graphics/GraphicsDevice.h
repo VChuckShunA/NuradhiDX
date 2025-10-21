@@ -13,7 +13,7 @@ namespace dx3d
 		virtual ~GraphicsDevice() override;
 
 		SwapChainPtr CreateSwapChain(const SwapChainDesc& desc) const;
-
+		DeviceContextPtr createDeviceContext();
 	private:
 		GraphicsResourceDesc getGraphicResourceDesc()const noexcept;
 	private:

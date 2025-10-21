@@ -14,5 +14,5 @@ dx3d::Game::Game(const GameDesc& gameDesc):
 
 dx3d::Game::~Game() 
 {
-	DX3DLogInfo("Game deallocation started.");
+	DX3DLogInfo("Game is Shutting Down.");
 }

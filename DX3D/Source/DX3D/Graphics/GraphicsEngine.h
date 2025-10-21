@@ -11,7 +11,11 @@ namespace dx3d
 		~GraphicsEngine();
 
 		GraphicsDevice& getGraphicsDevice() const noexcept;
+
+		void render();
 	private:
-		std::shared_ptr<GraphicsDevice> mgraphicsDevice{};
+		std::shared_ptr<GraphicsDevice> m_graphicsDevice{};
+
+		DeviceContextPtr m_deviceContext{};
 	};
 }

@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\DeviceContext.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Game\Display.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Core\Common.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Core\Base.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="DX3D\Source\DX3D\Graphics\SwapChain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DX3D\Source\DX3D\Graphics\DeviceContext.h" />
     <ClInclude Include="DX3D\Include\DX3D\Game\Display.h" />
     <ClInclude Include="DX3D\Include\DX3D\Core\Common.h" />
     <ClInclude Include="DX3D\Include\DX3D\All.h" />
